@@ -36,9 +36,9 @@ def report_occurence_of_ips(report):
     print("-" * 40)
 
     # Sort the report items by IP addresses (key) in ascending order
-    sorted_report = sorted(report.items(), key=lambda x: x[0])
+    sorted_report = sorted(report.items(), key=lambda x: (x[0], -x[1])
     # Then, sort by count (value) in descending order
-    sorted_report = sorted(sorted_report, key=lambda x: x[1], reverse=True)
+    # sorted_report = sorted(sorted_report, key=lambda x: x[1], reverse=True)
 
     for ip, count in sorted_report:
         print(f"Public IP: {ip} - {count} ")
